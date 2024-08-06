@@ -1,0 +1,13 @@
+Changelog
+
+Alpha Version [0.1] - 2024-08-05
+
+New Features
+
+- Added a test command of "!hi" which the bot responds with "Hello!"
+
+- Added text-to-speak feature, user types !tts followed by their message. An mp3 file is created with that TTS message, the bot joins the user's vc and plays this mp3.
+
+Notes
+
+- Need to figure out how STT will be implemented.
