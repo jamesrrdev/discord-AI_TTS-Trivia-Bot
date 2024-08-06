@@ -1,5 +1,27 @@
 Changelog
 
+Version [1.0.0] - 2024-08-05
+
+New Features
+
+- Fully working now. Has commands !h, !top, !ans.
+- !h shows all commands.
+- !top submits a topic to the bot, which connects to the voice channel and says the AI question.
+- !ans submits an answer to the bot, which sends it to the AI for checking. The bot will respond in voice depending on if the answer is right or wrong.
++ Added a Config File for changing the AI's personality, difficulty level, and/or configuration
++ Added DougDoug's Babagaboosh OpenAI file for OpenAI integration
+
+Improvements
+
+- !hi was replaced with !h
+- Differentiated the voices for the User and AI. (When it is reading the User's topic)
+- Added Windows Environment Variable integration for Tokens and Variables
+
+Known Issues
+
+- Need to fix Users submitting answers for previous questions
+- Need to add comments throughout file
+
 Alpha Version [0.1] - 2024-08-05
 
 New Features
