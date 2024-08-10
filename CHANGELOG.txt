@@ -1,5 +1,28 @@
 Changelog
 
+Version [1.1.0] - 2024-08-10
+
+New Features
+
+- Added configurable personality modules for the AI in the config
+- Added the "Skeptic" personality module
+
+Improvements
+
+- Added comments throughout file
+- Added print statements for debugging
+- The bot now stops TTS if Answer is given before the mp3 file is done playing.
+
+Known Issues
+
+- May need to look into how the bot handles Voice Channel connection.
+
+Roadmap
+
+- Add more personality modules
+- Add a configurable Grade level
+- Allow users to modify the config file within discord commands
+
 Version [1.0.0] - 2024-08-05
 
 New Features
