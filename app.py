@@ -28,7 +28,73 @@ user_answer = "user_answer"
 # See Commands
 @bot.command(name="h")
 async def SendMessage(ctx):
-    await ctx.send("!top : submit a topic ~~~ !ans : answer the question")
+    await ctx.send("!p : prompt the ai and get a msg back ~~~ !ptts : prompt the ai and get a tts back in vc ~~~ !top : submit a topic for trivia ~~~ !ans : answer the trivia question ~~~ !stop : Stops playing TTS")
+
+# Send a prompt to AI and get a MSG response
+@bot.command(name="p")
+async def SendMessage(ctx, *args):
+
+    # Add user text to User_Answer variable
+    text = " ".join(args)
+
+    # Send prompt to AI and save to variable
+    ai_response = openai_manager.chat(text)
+
+    if (len(ai_response) < 2000):
+        await ctx.send(ai_response)
+    else:
+        await ctx.send("This response exceeds Discord's 2000 character limit!")
+
+# Send a prompt to AI and get a MSG response
+@bot.command(name="ptts")
+async def SendMessage(ctx, *args):
+
+    user = ctx.message.author
+
+    if user.voice != None:
+
+            # Try connecting to voice channel
+            try:
+                vc = await user.voice.channel.connect()
+                print(vc)
+                print("Joining Voice...")
+            except:
+                vc = ctx.voice_client
+
+            # Add user text to User_Answer variable
+            text = " ".join(args)
+
+            # Send prompt to AI and save to variable
+            ai_response = openai_manager.chat(text)
+
+            # Turn AI's response to TTS and store as mp3
+            tts_response = gTTS(text = ai_response, lang = "en", slow = False)
+            tts_response.save("ai-tts-audio.mp3")
+
+            # Stop Bot's previous voice
+            if vc.is_playing():
+                vc.stop()
+                print("Stopping previous VC Audio...")
+
+            # Play User Input mp3 file
+            source = await nextcord.FFmpegOpusAudio.from_probe("ai-tts-audio.mp3", method="fallback")
+            vc.play(source)
+            print("Playing User Input Audio...")
+    else:
+            await ctx.send("You need to be in a vc to run this command!")
+
+# Stop TTS audio
+@bot.command(name="stop")
+async def stopTTS(ctx):
+
+    vc = ctx.voice_client
+
+    if vc.is_playing():
+        vc.stop()
+        print("Stopping previous VC Audio...")
+        await ctx.send("Stopping TTS audio...")
+    else:
+        await ctx.send("There is no TTS playing right now.")
 
 # Answer to the Trivia Question
 @bot.command(name="ans")
