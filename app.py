@@ -27,12 +27,12 @@ user_answer = "user_answer"
 
 # See Commands
 @bot.command(name="h")
-async def SendMessage(ctx):
+async def Help(ctx):
     await ctx.send("!p : prompt the ai and get a msg back ~~~ !ptts : prompt the ai and get a tts back in vc ~~~ !top : submit a topic for trivia ~~~ !ans : answer the trivia question ~~~ !stop : Stops playing TTS")
 
 # Send a prompt to AI and get a MSG response
 @bot.command(name="p")
-async def SendMessage(ctx, *args):
+async def Prompt(ctx, *args):
 
     # Add user text to User_Answer variable
     text = " ".join(args)
@@ -47,7 +47,7 @@ async def SendMessage(ctx, *args):
 
 # Send a prompt to AI and get a MSG response
 @bot.command(name="ptts")
-async def SendMessage(ctx, *args):
+async def PromptTTS(ctx, *args):
 
     user = ctx.message.author
 
@@ -98,7 +98,7 @@ async def stopTTS(ctx):
 
 # Answer to the Trivia Question
 @bot.command(name="ans")
-async def changeAnswer(ctx, *args):
+async def Answer(ctx, *args):
 
         user = ctx.message.author
         
@@ -144,7 +144,7 @@ async def changeAnswer(ctx, *args):
 
 # Text to Speech Command
 @bot.command(name="top")
-async def tts(ctx, *args):
+async def Topic(ctx, *args):
 
     # Store user text to variable
     text = " ".join(args)

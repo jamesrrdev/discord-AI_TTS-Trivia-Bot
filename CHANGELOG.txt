@@ -1,5 +1,21 @@
 Changelog
 
+Version [1.2.1] - 2024-08-12
+
+Improvements
+
+- Updated Function names to be more relevant
+
+Known Issues
+
+- Need to fix the help command and remove tildas (~~~)
+
+Roadmap
+
+- Add more personality modules
+- Add a configurable Grade level
+- Allow users to modify the config file within discord commands
+
 Version [1.2.0] - 2024-08-10
 
 New Features
