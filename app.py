@@ -1,4 +1,5 @@
 import os # Remove this if not using Windows Environment Variables
+import asyncio
 import nextcord
 import time
 from open_ai import OpenAiManager
@@ -80,6 +81,14 @@ async def PromptTTS(ctx, *args):
             source = await nextcord.FFmpegOpusAudio.from_probe("ai-tts-audio.mp3", method="fallback")
             vc.play(source)
             print("Playing User Input Audio...")
+
+            # Wait for Audio to finish playing
+            while vc.is_playing():
+                await asyncio.sleep(1)
+
+            # Delete file
+            os.remove("ai-tts-audio.mp3")
+            print("Deleted Audio File.")
     else:
             await ctx.send("You need to be in a vc to run this command!")
 
@@ -137,6 +146,14 @@ async def Answer(ctx, *args):
             vc.play(source)
             print("Playing AI TTS")
 
+            # Wait for Audio to finish playing
+            while vc.is_playing():
+                await asyncio.sleep(1)
+
+            # Delete file
+            os.remove("ai-tts-audio.mp3")
+            print("Deleted Audio File.")
+
 
         else:
             await ctx.send("You need to be in a vc to run this command!")
@@ -177,6 +194,14 @@ async def Topic(ctx, *args):
         vc.play(source)
         print("Playing User Input Audio...")
 
+        # Wait for Audio to finish playing
+        while vc.is_playing():
+            await asyncio.sleep(1)
+
+        # Delete file
+        os.remove("tts-audio.mp3")
+        print("Deleted Audio File.")
+
         # Send User's Input to AI and store to variable
         openai_result = openai_manager.chat_with_history(text)
 
@@ -190,13 +215,21 @@ async def Topic(ctx, *args):
 
         # Wait for bot to finish playing previous mp3 file
         while vc.is_playing():
-            time.sleep(1)
+            await asyncio.sleep(1)
             print("Waiting for TTS to finish...")
 
         # Play mp3 in voice channel
         source = await nextcord.FFmpegOpusAudio.from_probe("ai-tts-audio.mp3", method="fallback")
         vc.play(source)
         print("Playing AI response TTS...")
+
+        # Wait for Audio to finish playing
+        while vc.is_playing():
+            await asyncio.sleep(1)
+
+        # Delete file
+        os.remove("ai-tts-audio.mp3")
+        print("Deleted Audio File.")
 
     else:
         await ctx.send("You need to be in a vc to run this command!")

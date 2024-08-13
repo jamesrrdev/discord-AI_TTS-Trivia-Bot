@@ -1,5 +1,23 @@
 Changelog
 
+Version [1.2.2] - 2024-08-12
+
+Improvements
+
+- Now removes mp3 files after they are read
+- Replaced time.sleep() funcs with await asyncio.sleep()
+
+Known Issues
+
+- Need to fix the help command and remove tildas (~~~)
+
+Roadmap
+
+- Add more personality modules
+- Utilize the !help menu instead of !h
+- Add a configurable Grade level
+- Allow users to modify the config file within discord commands
+
 Version [1.2.1] - 2024-08-12
 
 Improvements
