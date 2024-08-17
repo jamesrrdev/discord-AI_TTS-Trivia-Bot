@@ -87,8 +87,9 @@ async def PromptTTS(ctx, *args):
                 await asyncio.sleep(1)
 
             # Delete file
-            os.remove("ai-tts-audio.mp3")
-            print("Deleted Audio File.")
+            if os.path.exists("ai-tts-audio.mp3"):
+                os.remove("ai-tts-audio.mp3")
+                print("Deleted Audio File.")
     else:
             await ctx.send("You need to be in a vc to run this command!")
 
@@ -99,10 +100,25 @@ async def stopTTS(ctx):
     vc = ctx.voice_client
 
     if vc.is_playing():
+
+        # Stops VC
         vc.stop()
         print("Stopping previous VC Audio...")
         await ctx.send("Stopping TTS audio...")
+
+        # Deletes Audio File
+        if os.path.exists("ai-tts-audio.mp3"):
+            os.remove("ai-tts-audio.mp3")
+            print("Deleted AI file through Stop.")
+        elif os.path.exists("tts-audio.mp3"):
+            os.remove("tts-audio.mp3")
+            print("Deleted TTS file through Stop.")
+        else:
+            print("No audio files found.")
+
     else:
+
+        # Send Message
         await ctx.send("There is no TTS playing right now.")
 
 # Answer to the Trivia Question
@@ -151,8 +167,9 @@ async def Answer(ctx, *args):
                 await asyncio.sleep(1)
 
             # Delete file
-            os.remove("ai-tts-audio.mp3")
-            print("Deleted Audio File.")
+            if os.path.exists("ai-tts-audio.mp3"):
+                os.remove("ai-tts-audio.mp3")
+                print("Deleted Audio File.")
 
 
         else:
@@ -199,8 +216,9 @@ async def Topic(ctx, *args):
             await asyncio.sleep(1)
 
         # Delete file
-        os.remove("tts-audio.mp3")
-        print("Deleted Audio File.")
+        if os.path.exists("tts-audio.mp3"):
+            os.remove("tts-audio.mp3")
+            print("Deleted Audio File.")
 
         # Send User's Input to AI and store to variable
         openai_result = openai_manager.chat_with_history(text)
@@ -228,8 +246,9 @@ async def Topic(ctx, *args):
             await asyncio.sleep(1)
 
         # Delete file
-        os.remove("ai-tts-audio.mp3")
-        print("Deleted Audio File.")
+        if os.path.exists("ai-tts-audio.mp3"):
+            os.remove("ai-tts-audio.mp3")
+            print("Deleted Audio File.")
 
     else:
         await ctx.send("You need to be in a vc to run this command!")

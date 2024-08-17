@@ -1,5 +1,24 @@
 Changelog
 
+Version [1.2.3] - 2024-08-12
+
+Improvements
+
+- Now checks if File exists before deleting.
+- !stop now deletes Audio files
+
+Known Issues
+
+- Need to fix the help command and remove tildas (~~~)
+- Bot will break if multiple users write command at the same time.
+
+Roadmap
+
+- Add more personality modules
+- Utilize the !help menu instead of !h
+- Add a configurable Grade level
+- Allow users to modify the config file within discord commands
+
 Version [1.2.2] - 2024-08-12
 
 Improvements
@@ -10,6 +29,7 @@ Improvements
 Known Issues
 
 - Need to fix the help command and remove tildas (~~~)
+- Bot will break if multiple users write command at the same time.
 
 Roadmap
 
