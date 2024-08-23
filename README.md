@@ -106,6 +106,8 @@ This is an example of how to list things you need to use the software and how to
   3. Click 'Windows builds by BtBn'
   4. Download the latest version of ffmpeg-master-lastest-win64-gpl.zip
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Installation
 
 #### SECURITY WARNING ⚠️ IMPORTANT:
