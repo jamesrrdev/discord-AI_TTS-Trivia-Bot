@@ -8,10 +8,10 @@
     <img src="images/discord-logo.png" alt="Logo" width="120" height="120">
   </a>
 
-  <h3 align="center">Discord ChatGPT Trivia Bot</h3>
+  <h3 align="center">Discord OpenAI Trivia Bot</h3>
 
   <p align="center">
-    A discord bot utilizing ChatGPT to host trivia on any topic you can imagine!
+    A discord bot utilizing OpenAI's GPT-4o-mini to host trivia on any topic you can imagine!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
