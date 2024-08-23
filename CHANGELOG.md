@@ -6,6 +6,9 @@
 - Added README.md, CHANGELOG.md, and LICENSE.txt
 - Changed formatting for config API keys
 
+### Removed
+- Replaced CHANGELOG.txt with CHANGELOG.MD
+
 ## v1.3.1 - 2024-08-22
 
 ### Improvements
