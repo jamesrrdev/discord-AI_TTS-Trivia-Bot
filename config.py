@@ -1,5 +1,12 @@
+import os
+
 class config:
 
+    # API KEYS AND TOKENS (IF NOT USING WINDOWS ENVIRONMENT VARIABLES, REMOVE "os.environ.get")
+    DISCORD_BOT_TOKEN = os.environ.get("TRIVIA_BOT_TOKEN")
+    OPEN_AI_KEY = os.environ.get("OPENAI_API_KEY")
+
+    # Command Cooldowns
     ai_prompt_command_cooldown = 7 #seconds before prompt command can be used again
     ai_msgs_per_cooldown = 1 #msgs sent before command goes on cooldown
 

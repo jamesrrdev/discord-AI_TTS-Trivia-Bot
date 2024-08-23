@@ -25,6 +25,8 @@ class Prompts(commands.Cog):
     @commands.command(name="p", help="prompt the ai and get a msg back")
     async def Prompt(self, ctx, *args):
 
+        print("Prompt")
+
         # Add user text to User_Answer variable
         text = " ".join(args)
 
@@ -43,49 +45,48 @@ class Prompts(commands.Cog):
 
         user = ctx.message.author
 
+        print("PTTS")
+
         if user.voice != None:
-                
-                if vc.is_playing() == False:
 
-                    # Try connecting to voice channel
-                    try:
-                        vc = await user.voice.channel.connect()
-                        print(vc)
-                        print("Joining Voice...")
-                    except:
-                        vc = ctx.voice_client
+            # Try connecting to voice channel
+            try:
+                vc = await user.voice.channel.connect()
+                print(vc)
+                print("Joining Voice...")
+            except:
+                vc = ctx.voice_client
+            
+            print("AHHHH")
 
-                    # Add user text to User_Answer variable
-                    text = " ".join(args)
+            # Add user text to User_Answer variable
+            text = " ".join(args)
 
-                    # Send prompt to AI and save to variable
-                    ai_response = openai_manager.chat(text)
+            # Send prompt to AI and save to variable
+            ai_response = openai_manager.chat(text)
 
-                    # Turn AI's response to TTS and store as mp3
-                    tts_response = gTTS(text = ai_response, lang = "en", slow = False)
-                    tts_response.save("ai-tts-audio.mp3")
+            # Turn AI's response to TTS and store as mp3
+            tts_response = gTTS(text = ai_response, lang = "en", slow = False)
+            tts_response.save("ai-tts-audio.mp3")
 
-                    # Stop Bot's previous voice
-                    if vc.is_playing():
-                        vc.stop()
-                        print("Stopping previous VC Audio...")
+            # Stop Bot's previous voice
+            if vc.is_playing():
+                vc.stop()
+                print("Stopping previous VC Audio...")
 
-                    # Play User Input mp3 file
-                    source = await nextcord.FFmpegOpusAudio.from_probe("ai-tts-audio.mp3", method="fallback")
-                    vc.play(source)
-                    print("Playing User Input Audio...")
+            # Play User Input mp3 file
+            source = await nextcord.FFmpegOpusAudio.from_probe("ai-tts-audio.mp3", method="fallback")
+            vc.play(source)
+            print("Playing User Input Audio...")
 
-                    # Wait for Audio to finish playing
-                    while vc.is_playing():
-                        await asyncio.sleep(1)
+            # Wait for Audio to finish playing
+            while vc.is_playing():
+                await asyncio.sleep(1)
 
-                    # Delete file
-                    if os.path.exists("ai-tts-audio.mp3"):
-                        os.remove("ai-tts-audio.mp3")
-                        print("Deleted Audio File.")
-                
-                else:
-                    await ctx.send("Please wait for me to finish my current prompt.")
+            # Delete file
+            if os.path.exists("ai-tts-audio.mp3"):
+                os.remove("ai-tts-audio.mp3")
+                print("Deleted Audio File.")
 
         else:
                 await ctx.send("You need to be in a vc to run this command!")

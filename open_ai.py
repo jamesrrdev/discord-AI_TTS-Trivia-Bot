@@ -1,5 +1,6 @@
 import os
 import tiktoken
+from config import config
 from openai import OpenAI
 
 def num_tokens_from_messages(messages, model='gpt-4o-mini'):
@@ -25,7 +26,7 @@ class OpenAiManager:
     def __init__(self):
         self.chat_history = []
         try:
-            self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+            self.client = OpenAI(api_key=config.OPEN_AI_KEY)
         except TypeError:
             exit("You need to set OPENAI_API_KEY in your environment!")
 

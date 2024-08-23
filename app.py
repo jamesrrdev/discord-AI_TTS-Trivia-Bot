@@ -1,5 +1,6 @@
 import os
 import nextcord
+from config import config
 from nextcord import Embed, Color
 from nextcord.ext import commands
 
@@ -10,7 +11,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", case_insensitive=True, intents=intents)
 
 # Replace with your Discord Bot Token
-DISCORD_BOT_TOKEN = os.environ.get("TRIVIA_BOT_TOKEN")
+DISCORD_BOT_TOKEN = config.DISCORD_BOT_TOKEN
 
 # Check for Cooldown Errors and Send MSG
 @bot.event
