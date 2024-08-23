@@ -1,5 +1,8 @@
 class config:
 
+    ai_prompt_command_cooldown = 7 #seconds before prompt command can be used again
+    ai_msgs_per_cooldown = 1 #msgs sent before command goes on cooldown
+
     question_grade_level = "1st Grade"
 
     # To Change Personality (Ex. "default", "skeptic")

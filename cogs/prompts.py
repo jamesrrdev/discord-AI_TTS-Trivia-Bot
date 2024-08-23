@@ -10,8 +10,8 @@ from gtts import gTTS
 openai_manager = OpenAiManager()
 print("OpenAI manager created.")
 
-cooldown_msgs_per = 1
-cooldown_time = 7
+cooldown_time = config.ai_prompt_command_cooldown
+cooldown_msgs_per = config.ai_msgs_per_cooldown
 
 # Sends the initial message
 openai_manager.chat_history.append(config.first_message)
