@@ -121,7 +121,7 @@ When using this software, be cautious about how you handle API keys and other se
    ```sh
    git clone https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot.git
    ```
-2. Enter your API in `config.py`
+2. Enter your API Keys/Tokens in `config.py`
 
    Direct
    ```py
