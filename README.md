@@ -248,4 +248,4 @@ Some cool resources that helped with this project!
 [Nextcord.dev]: https://img.shields.io/badge/Nextcord-000000?style=for-the-badge&logo=discord&logoColor=blue
 [Nextcord-url]: https://nextcord.dev
 [OpenAI.com]: https://img.shields.io/badge/OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white
-[OpenAI-url]: platform.openai.com
+[OpenAI-url]: https://platform.openai.com
