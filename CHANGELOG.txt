@@ -1,6 +1,27 @@
 Changelog
 
-Version [1.2.3] - 2024-08-12
+Version [1.3.0] - 2024-08-22
+
+Features
+
+- !help command now functional
+- Commands are now held in Cogs (Categories) in a new folder, rather than main
+- You can now !load, !unload, and !reload these Cogs in Discord (This will refresh the Cog scripts)
+- AI Prompt Commands have a cooldown, which can be changed at the top of cogs/prompts
+
+Improvements
+
+- Commands are now case-insensitive
+- Removed !h command, use !help now
+
+Roadmap
+
+- Add more personality modules
+- Add a configurable Grade level
+- Allow users to modify the config file within discord commands
+- Allow users to configure cooldowns within discord
+
+Version [1.2.3] - 2024-08-17
 
 Improvements
 
@@ -19,7 +40,7 @@ Roadmap
 - Add a configurable Grade level
 - Allow users to modify the config file within discord commands
 
-Version [1.2.2] - 2024-08-12
+Version [1.2.2] - 2024-08-13
 
 Improvements
 
