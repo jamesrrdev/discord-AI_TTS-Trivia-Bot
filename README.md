@@ -11,7 +11,7 @@
   <h3 align="center">Discord OpenAI Trivia Bot</h3>
 
   <p align="center">
-    A discord bot utilizing OpenAI's GPT-4o-mini to host trivia on any topic you can imagine!
+    A discord bot utilizing OpenAI's GPT-4o-mini API to host trivia on any topic you can imagine!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
