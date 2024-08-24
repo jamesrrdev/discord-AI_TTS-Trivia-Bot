@@ -45,8 +45,6 @@ class Prompts(commands.Cog):
 
         user = ctx.message.author
 
-        print("PTTS")
-
         if user.voice != None:
 
             # Try connecting to voice channel
@@ -56,8 +54,6 @@ class Prompts(commands.Cog):
                 print("Joining Voice...")
             except:
                 vc = ctx.voice_client
-            
-            print("AHHHH")
 
             # Add user text to User_Answer variable
             text = " ".join(args)
@@ -164,7 +160,6 @@ class Prompts(commands.Cog):
                 vc = await user.voice.channel.connect()
                 print(vc)
                 print("Joining Voice...")
-                
             except:
                 vc = ctx.voice_client
                 print(vc)
