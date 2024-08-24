@@ -8,19 +8,19 @@
     <img src="images/discord-logo.png" alt="Logo" width="120" height="120">
   </a>
 
-  <h3 align="center">Discord ChatGPT Trivia Bot</h3>
+  <h3 align="center">Discord OpenAI Trivia Bot</h3>
 
   <p align="center">
-    A discord bot utilizing ChatGPT to host trivia on any topic you can imagine!
+    A discord bot utilizing OpenAI's GPT-4o-mini API to host trivia on any topic you can imagine!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -121,7 +121,7 @@ When using this software, be cautious about how you handle API keys and other se
    ```sh
    git clone https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot.git
    ```
-2. Enter your API in `config.py`
+2. Enter your API Keys/Tokens in `config.py`
 
    Direct
    ```py

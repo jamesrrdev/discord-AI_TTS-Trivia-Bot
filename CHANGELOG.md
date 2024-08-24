@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.3.2 - 2024-08-22
+## v1.3.2 - 2024-08-23
 
 ### Improvements
 - Added README.md, CHANGELOG.md, and LICENSE.txt
