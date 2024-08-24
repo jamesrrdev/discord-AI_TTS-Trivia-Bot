@@ -2,6 +2,11 @@
 
 ## v1.3.2 - 2024-08-23
 
+### Removed
+- Redundant debug statements
+
+## v1.3.2 - 2024-08-23
+
 ### Improvements
 - Added README.md, CHANGELOG.md, and LICENSE.txt
 - Changed formatting for config API keys
