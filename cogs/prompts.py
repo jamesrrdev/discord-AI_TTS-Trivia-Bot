@@ -13,9 +13,6 @@ print("OpenAI manager created.")
 cooldown_time = config.ai_prompt_command_cooldown
 cooldown_msgs_per = config.ai_msgs_per_cooldown
 
-# Sends the initial message
-openai_manager.chat_history.append(config.first_message)
-
 class Prompts(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -38,6 +35,30 @@ class Prompts(commands.Cog):
         else:
             await ctx.send("This response exceeds Discord's 2000 character limit!")
 
+    # Send a prompt to AI and get a MSG response with chat history
+    @commands.cooldown(cooldown_msgs_per, cooldown_time)
+    @commands.command(name="ph", help="prompt the ai and get a msg back WITH chat history")
+    async def PromptWithHist(self, ctx, *args):
+
+        print("Prompt with History")
+
+        try:
+            openai_manager.chat_history.remove(config.first_message)
+            print("Deleted Trivia message")
+        except:
+            print("Trivia message not in history, proceeding...")
+
+        # Add user text to User_Answer variable
+        text = " ".join(args)
+
+        # Send prompt to AI and save to variable
+        ai_response = openai_manager.chat_with_history(text)
+
+        if (len(ai_response) < 2000):
+            await ctx.send(ai_response)
+        else:
+            await ctx.send("This response exceeds Discord's 2000 character limit!")
+
     # Send a prompt to AI and get a MSG response
     @commands.cooldown(cooldown_msgs_per, cooldown_time)
     @commands.command(name="ptts", help="prompt the ai and get a tts back in vc")
@@ -50,7 +71,6 @@ class Prompts(commands.Cog):
             # Try connecting to voice channel
             try:
                 vc = await user.voice.channel.connect()
-                print(vc)
                 print("Joining Voice...")
             except:
                 vc = ctx.voice_client
@@ -148,6 +168,12 @@ class Prompts(commands.Cog):
     @commands.command(name="top", help="submit a topic to ai for trivia")
     async def Topic(self, ctx, *args):
 
+        # Clear chat history
+        openai_manager.chat_history.clear()
+
+        # Sends the initial trivia message
+        openai_manager.chat_history.append(config.first_message)
+
         # Store user text to variable
         text = " ".join(args)
         user = ctx.message.author
@@ -219,6 +245,14 @@ class Prompts(commands.Cog):
 
         else:
             await ctx.send("You need to be in a vc to run this command!")
+
+    @commands.command(name="clear", help="Clear the AI's chat history.")
+    async def Clear(self, ctx):
+
+        # Clear chat history
+        openai_manager.chat_history.clear()
+
+        await ctx.send("Cleared AI Chat history!")
 
 def setup(bot):
     bot.add_cog(Prompts(bot))
