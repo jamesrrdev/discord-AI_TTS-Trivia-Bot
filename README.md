@@ -11,7 +11,7 @@
   <h3 align="center">Discord OpenAI Trivia Bot</h3>
 
   <p align="center">
-    A discord bot utilizing OpenAI's GPT-4o-mini API to host trivia on any topic you can imagine!
+    A discord bot utilizing OpenAI's API to host trivia on any topic you can imagine!
     <br />
     <a href="https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot"><strong>Explore the docs »</strong></a>
     <br />
@@ -86,6 +86,8 @@ Features:
 Before downloading please acknowledge that this software uses GPT-4o mini using OpenAI's API which requires account funds.
 
 Please review OpenAI's API pricing here: [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
+
+By default the program using GPT-4o mini but you can change the configuration to another model if needed.
 
 To get a local copy up and running follow these steps.
 
