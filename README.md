@@ -59,11 +59,14 @@
 
 This is a project that utilizes OpenAI's API and DougDoug's Babagaboosh to create a Discord bot that is able to create an ambigious Trivia game for users to play with. The bot will repeat the Trivia through TTS.
 
+This bot also supports normal chatting and prompting with OpenAI, with and without message history!
+
 Disclaimer: Right now the Project's scale is intended for a small server of 5-10 TRUSTED people. I will need to work on making the commands Admin-only. If you have suggestions or needs for scaling please let me know!
 
 Features:
 * Trivia commands such as !top and !ans.
-* Normal AI prompting with !p and !ptts.
+* Normal AI prompting with !p, !ph and !ptts.
+* See !help for more info on these commands!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
