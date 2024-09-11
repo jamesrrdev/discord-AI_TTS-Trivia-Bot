@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.4 - 2024-09-11
+
+### Features
+- Added !ph allowing AI chatting with message history
+
+### Improvements
+- Trivia config message is now only appended in !top
+
 ## v1.3.3 - 2024-08-24
 
 ### Removed
