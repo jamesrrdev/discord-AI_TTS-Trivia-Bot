@@ -192,7 +192,7 @@ The Bot tells you if you are Right or Wrong
 - [ ] Add more personality modules
     - [X] Skeptic
     - [ ] Angry
-    - [ ] Surfer Bro
+    - [ ] Surfer
 
 See the [open issues](https://github.com/jamesrrdev/discord-AI_TTS-Trivia-Bot/issues) for a full list of proposed features (and known issues).
 
